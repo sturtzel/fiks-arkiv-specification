@@ -28,22 +28,23 @@ Arkivmelding er topp objektet for arkivmelding meldingstypen og inneholder det s
 
 ### `system`
 #### Definisjon
-Identifiserer avsender system. Vil kunne styre hvilke standardverdier som skal kunne settes sammen med feltet `regel`.
+Identifiserer avsendersystem (f.eks. 'Veiconsult Veivedlikeholdssystem') og skal være entydig. `system` kan benyttes av arkivet for å sette opp standardverdier for arkiveringen fra fagsystemet.
 
 ### `regel`
 #### Definisjon
-Hvis det er lagt til en verdi i feltet regel vil det bestemme hvilket regelsett som skal benyttes for å sette standardverdier. Feltet `system` bestemmer hvilke regelset som er tilgjengelig i arkivsystemet.
-Regel er referanse til regelsettet med standardverdier ref gammelt skjemamottak.
+Hvis denne er gitt verdi vil den referere til et regelsett som overstyrer standardverdiene gitt av `system`. Dette kan benyttes av fagsystemer som arkiverer flere typer journalposter og ønsker forskjellige standardverdier for disse, f.eks. ett regelsett for inngående søknader, et annet for svar på disse og et tredje for rapporter.
+Kombinasjonen av `system` og `regel` skal være entydig.
+Regel er referanse til regelsettet med standardverdier ref. gammelt skjemamottak, ref. formid i KS Resultat XML.
 
 ### `tidspunkt`
 #### Definisjon
-Tidspunkt for opprettelsen av arkivmeldingen hos avsender system.
+Tidspunkt for opprettelsen av arkivmeldingen hos avsendersystem.
 
 ### `antallFiler`
 #### Definisjon
 Totalt antall filer som følger med i arkivmeldingen.
-Dette feltet skal vise totalt antall vedlagte filer, ikke inklusiv arkivmelding.xml. 
-Sender man bare en arkivmelding.xml uten hoveddoument eller vedlegg skal `antallFiler` være 0. 
+Dette feltet skal vise totalt antall vedlagte filer, eksklusive arkivmelding.xml. 
+Sender man bare arkivmelding.xml uten hoveddoument eller vedlegg skal `antallFiler` være 0. 
 
 ### `mappe`
 #### Definisjon
